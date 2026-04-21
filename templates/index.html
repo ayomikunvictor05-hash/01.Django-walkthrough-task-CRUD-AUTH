@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
     <!-- Hero Section -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
     <section id="hero" class="hero section accent-background">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">

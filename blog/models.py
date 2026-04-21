@@ -1,10 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from account.models import CustomUser
 
 # Create your models here.
 # author's profile 
 class AuthourProfile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE) # AuthourProfile is connected to the built-in User model using a ForeignKey relationship, allowing us to associate each author profile with a specific user account.
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE) # AuthourProfile is connected to the built-in User model using a ForeignKey relationship, allowing us to associate each author profile with a specific user account.
     profile_picture = models.ImageField(upload_to='authors/')
     bio = models.TextField()
 

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # created apps 
     'app1',
     'blog',
+    # 'auth', # To learn Custom Authentication
+    'account', # To learn Custom Authentication
 
     # 'ckeditor',
     # using summernote 
@@ -60,6 +62,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'focal.urls'
+
+AUTH_USER_MODEL = "account.CustomUser"
+
+AUTHENTICATION_BACKENDS = ['account.auth_backend.EmailBackend']
 
 TEMPLATES = [
     {
